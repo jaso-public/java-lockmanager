@@ -15,6 +15,21 @@ public class ResourceId {
         this.name = name;
         this.id = nextResourceId.getAndIncrement();
     }
+    
+    /**
+     * constructor that set both the name and the id.
+     * This constructor is really only used for testing.
+     * 
+     * Note: this constructor lets us make duplicate non-unique ResourceIds
+     * 
+     * @param name the of the resource
+     * @param id the unique identifier for the resource.
+     */
+    public ResourceId(String name, long id) {
+        if(name == null) name = "";
+        this.name = name;
+        this.id = id;
+    }
 
     @Override
     public String toString() {
